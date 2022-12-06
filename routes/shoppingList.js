@@ -21,9 +21,10 @@ router.patch("/:id", async (req, res) => {
 })
 
 router.delete("/:id", async (req, res) => {
-  const deletedListItem = await deleteListItem(req.params.id);
-  return res.json({ success: true, payload: deletedListItem });
+  const result = await deleteListItem(req.params.id);
+  return res.json({ success: true, payload: result });
 })
 
 export default router;
+
 

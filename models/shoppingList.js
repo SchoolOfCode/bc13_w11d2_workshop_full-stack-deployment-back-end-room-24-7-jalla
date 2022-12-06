@@ -27,8 +27,10 @@ export async function editCompletedStatus(id, item, completed) {
 }
 
 export async function deleteListItem(id) {
-  const deleteEnglishObject = await query("DELETE FROM shopping WHERE id = $1 RETURNING *;", [id]);
-  return deleteEnglishObject.rows;
+  const data = await pool.query(`DELETE FROM shopping WHERE id = $1 RETURNING *;`, 
+  [id]
+  );
+  return data.rows;
 }
 
 
