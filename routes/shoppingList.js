@@ -23,4 +23,3 @@ router.patch("/:id", async (req, res) => {
 
 export default router;
 
-

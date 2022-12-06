@@ -24,5 +24,5 @@ export async function editCompletedStatus(id, listItem) {
     `UPDATE shopping SET title = $2, completed = $3 WHERE id = $1 RETURNING *;`,
     [id, item, completed]
   );
-  return data.rows[0]
+  return data.rows
 }
